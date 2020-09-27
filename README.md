@@ -68,6 +68,10 @@ mysql>create database indigo;
 
 mysql>CREATE USER '<user_name>'@'%' IDENTIFIED BY '<passwd>';
  
+ or
+ 
+ CREATE USER 'krishna'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+ 
 mysql>GRANT ALL ON *.* TO '<user>'@'%';
   
 mysql>FLUSH PRIVILEGES;
