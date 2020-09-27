@@ -1,10 +1,8 @@
 
 
+$git clone https://github.com/krishnamaram2/webapps.git && cd webapps/src/middleware/Student
+
 $yum install maven
-
-$git clone https://github.com/krishnamaram2/webapps.git
-
-$cd webapps/src/middleware/Student
 
 $mvn package
 
@@ -23,9 +21,11 @@ Step 3: install set up tomcat app server
 
 $wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.57/bin/apache-tomcat-8.5.57.tar.gz 
 
+$mkdir tomcat
+
 $sudo tar xvf apache-tomcat-8*tar.gz -C /home/centos/tomcat --strip-components=1
 
-$sudo chown -R centos:centos /home/centos/tomcat*
+$sudo chown -R centos:centos /home/centos/tomcat/*
 
 $sudo sh /home/centos/tomcat/bin/startup.sh
 
@@ -33,7 +33,9 @@ Step 4: build source code and deploy war file
 
 $sudo rm -rf /home/centos/tomcat/webapps/ROOT/*
  
-$git clone https://github.com/krishnamaram2/binary-code.git && cd binary-code && cp -rf dist /home/centos/tomcat/webapps/ROOT && cp -rf Student.war /home/centos/tomcat/webapps/
+$git clone https://github.com/krishnamaram2/binary-code.git && cp -rf binary-code/binaries/dist /home/centos/tomcat/webapps/ROOT/ && cp -rf  binary-code/binaries/Student.war /home/centos/tomcat/webapps/ && sudo  rm -rf binary-code
+
+$sudo chown -R centos:centos /home/centos/tomcat/*
 
 $sed -i 's/localhost/192.168.5.4/g' /home/centos/tomcat/webapps/Student/WEB-INF/classes/application.properties 
  
