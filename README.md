@@ -72,7 +72,7 @@ mysql>GRANT ALL ON *.* TO '<user>'@'%';
   
 mysql>FLUSH PRIVILEGES;
 
-$git clone https://github.com/krishnamaram2/binary-code.git && cd binary-code
+$git clone https://github.com/krishnamaram2/binary-code.git 
 
-$mysql -u <user_name> -p indigo < indigo.sql
+$mysql -u <user_name> -p indigo < binary-code/binaries/indigo.sql
 
