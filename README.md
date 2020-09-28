@@ -37,6 +37,10 @@ $git clone https://github.com/krishnamaram2/binary-code.git && cp -rf binary-cod
 
 $sudo chown -R centos:centos /home/centos/tomcat/*
 
+less dist/main.js |  grep this.baseUrl = 'http://<app-server-ip>:8080/Student/api/'; note:have to edit two times(nile 314, 701)
+ 
+sudo sed -i 's/localhost/192.168.4.4/g' /home/centos/tomcat/webapps/ROOT/dist/main.js
+
 $sed -i 's/localhost/192.168.5.4/g' /home/centos/tomcat/webapps/Student/WEB-INF/classes/application.properties 
  
 c.Database Server(MySQL) Set up
@@ -76,7 +80,7 @@ mysql>GRANT ALL ON *.* TO '<user>'@'%';
   
 mysql>FLUSH PRIVILEGES;
 
-$git clone https://github.com/krishnamaram2/binary-code.git 
+$git clone https://github.com/krishnamaram2/webapps.git 
 
-$mysql -u <user_name> -p indigo < binary-code/binaries/indigo.sql
+$mysql -u <user_name> -p indigo < webapps/binaries/indigo.sql
 
